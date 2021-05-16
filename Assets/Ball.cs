@@ -5,11 +5,13 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public float speed;
-    public Rigidbody2D rigidBody;
+    public Rigidbody2D ball;
+    public Vector3 startPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        //startPosition = transform.position;
         Launch();    
     }
 
@@ -23,6 +25,13 @@ public class Ball : MonoBehaviour
     {
         float x = Random.Range(0, 2) == 0 ? -1 : 1;
         float y = Random.Range(0, 2) == 0 ? -1 : 1;
-        rigidBody.velocity = new Vector2(speed * x, speed * y);
+        ball.velocity = new Vector2(speed * x, speed * y);
+    }
+
+    public void Reset()
+    {
+        ball.velocity = Vector2.zero;
+        transform.position = startPosition;
+        Launch();
     }
 }

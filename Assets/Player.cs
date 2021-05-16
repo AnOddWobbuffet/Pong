@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rigidBody;
 
 
-    [SerializeField] private GameObject hehe;
+    //[SerializeField] private Ball hehe;
     private float movement;
 
     // Update is called once per frame
@@ -26,7 +26,6 @@ public class Player : MonoBehaviour
         }
 
         rigidBody.velocity = new Vector2(rigidBody.velocity.x, movement * speed);
-
     }
     
 }
